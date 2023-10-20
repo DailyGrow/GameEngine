@@ -7,8 +7,8 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
-#include <string>
 
+#include "GameObject.h"
 #include "SDL_image.h"
 #include "Utils.h"
 
@@ -20,13 +20,11 @@ ResourceManager::ResourceManager() {
   if (TTF_Init() == -1) {
     std::cerr << "Could not initialize SDL2_ttf, error: " << TTF_GetError()
               << std::endl;
-    return;
   }
   if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) !=
       (IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF)) {
     std::cerr << "Failed to initialize SDL_image: " << IMG_GetError()
               << std::endl;
-    return;
   }
   int Mix_flags = MIX_INIT_MP3 | MIX_INIT_FLAC;
   int Mix_initted = Mix_Init(Mix_flags);
@@ -37,7 +35,6 @@ ResourceManager::ResourceManager() {
   if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) < 0) {
     std::cerr << "Could not initialize SDL2_mixer, error: " << Mix_GetError()
               << std::endl;
-    return;
   }
   renderer_ = nullptr;
 }
@@ -58,48 +55,45 @@ void ResourceManager::LoadResources(std::string_view folder_path) {
     std::cerr << "Path: " << folder_path << " is not valid!" << std::endl;
     return;
   }
-  
   for (const auto &directory : fs::recursive_directory_iterator(folder_path)) {
     if (fs::is_regular_file(directory)) {
       const auto &extension = directory.path().extension();
-      const auto &filename = directory.path().filename();
+      const auto &filename = directory.path().filename().string();
       if (extension == ".ttf") {
-        if (fonts_.find(filename.string()) != fonts_.end()) continue;
-        std::wstring wstr(directory.path());
-        std::string tmp(wstr.begin(), wstr.end());
-        //string tmp = directory.path().c_str();
-        fonts_[filename.generic_string()] = TTF_OpenFont(tmp.c_str(), 20);
+        if (fonts_.find(filename) != fonts_.end()) continue;
+        fonts_[filename] = TTF_OpenFont(directory.path().string().c_str(), 20);
       }
       if (extension == ".wav") {
-        if (audios_.find(filename.string()) != audios_.end()) continue;
-        std::wstring wstr(directory.path());
-        std::string tmp(wstr.begin(), wstr.end());
-        audios_[filename.generic_string()] = Mix_LoadWAV(tmp.c_str());
+        if (audios_.find(filename) != audios_.end()) continue;
+        audios_[filename] = Mix_LoadWAV(directory.path().string().c_str());
       }
       if (extension == ".scene") {
-        if (scenes_.find(filename.string()) != scenes_.end()) continue;
-        std::ifstream scene_in(directory.path().c_str());
+        if (scenes_.find(filename) != scenes_.end()) continue;
+        std::ifstream scene_in(directory.path().string().c_str());
         json scene_json;
         scene_in >> scene_json;
-        scenes_[filename.generic_string()] = std::make_unique<Scene>(scene_json.get<Scene>());
+        scenes_[filename] = {directory.path().string(),
+                             std::make_unique<Scene>(scene_json.get<Scene>())};
         scene_in.close();
       }
       if (extension == ".bmp") {
-        if (images_.find(filename.string()) != images_.end()) continue;
-        std::wstring wstr(directory.path());
-        std::string tmp(wstr.begin(), wstr.end());
-        if (SDL_Surface *bmp_surface = SDL_LoadBMP(tmp.c_str())) {
-          images_[filename.generic_string()] =
+        if (images_.find(filename) != images_.end()) continue;
+        if (SDL_Surface *bmp_surface =
+                SDL_LoadBMP(directory.path().string().c_str())) {
+          SDL_SetColorKey(bmp_surface, SDL_TRUE,
+                          SDL_MapRGB(bmp_surface->format, 0, 0, 0));
+          images_[filename] =
               SDL_CreateTextureFromSurface(renderer_, bmp_surface);
           SDL_FreeSurface(bmp_surface);
         }
       }
       if (::EngineCore::Utils::isIn(extension, ".png", ".jpg", ".tif")) {
-        if (images_.find(filename.string()) != images_.end()) continue;
-        std::wstring wstr(directory.path());
-        std::string tmp(wstr.begin(), wstr.end());
-        if (SDL_Surface *surface = IMG_Load(tmp.c_str())) {
-          images_[filename.generic_string()] = SDL_CreateTextureFromSurface(renderer_, surface);
+        if (images_.find(filename) != images_.end()) continue;
+        if (SDL_Surface *surface =
+                IMG_Load(directory.path().string().c_str())) {
+          SDL_SetColorKey(surface, SDL_TRUE,
+                          SDL_MapRGB(surface->format, 0, 0, 0));
+          images_[filename] = SDL_CreateTextureFromSurface(renderer_, surface);
           SDL_FreeSurface(surface);
         }
       }
@@ -161,7 +155,7 @@ Scene *ResourceManager::LoadScene(const std::string &scene_name) {
     std::cerr << "Scene: " << scene_name << " Not Found!" << std::endl;
     return nullptr;
   }
-  return scenes_[scene_name].get();
+  return scenes_[scene_name].second.get();
 }
 
 SDL_Texture *ResourceManager::LoadImage(const std::string &image_name) {
@@ -187,14 +181,23 @@ std::string ResourceManager::GetActiveSceneName() const {
   return active_scene_;
 }
 
+std::string ResourceManager::GetActiveScenePath() const {
+  if (scenes_.find(active_scene_) == scenes_.end()) {
+    std::cerr << "Scene " << active_scene_ << "Not Found!" << std::endl;
+    return "";
+  }
+  return scenes_.at(active_scene_).first;
+}
+
 void ResourceManager::SetActiveTileset(const std::string &active_name) {
   active_tileset_ = active_name;
 }
 
-Tileset *ResourceManager::ActiveTileset() {
-  if (active_tileset_.empty()) return nullptr;
-  for (auto &i : ActiveScene()->GetTileSets()) {
-    if (i.GetName() == active_tileset_) return &i;
+Tileset *ResourceManager::ActiveTileset(std::string_view tileset_name) {
+  if (tileset_name.empty()) tileset_name = active_tileset_;
+  if (tileset_name.empty()) return nullptr;
+  for (auto &i : ActiveScene()->TileSets()) {
+    if (i.GetName() == tileset_name) return &i;
   }
   return nullptr;
 }
@@ -203,10 +206,11 @@ std::string ResourceManager::GetActiveTilesetName() const {
   return active_tileset_;
 }
 
-Layer *ResourceManager::ActiveLayer() {
-  if (active_tileset_.empty()) return nullptr;
+Layer *ResourceManager::ActiveLayer(std::string_view tileset_name) {
+  if (tileset_name.empty()) tileset_name = active_tileset_;
+  if (tileset_name.empty()) return nullptr;
   for (auto &i : ActiveScene()->Layers()) {
-    if (i.GetTileset() == active_tileset_) return &i;
+    if (i.GetTileset() == tileset_name) return &i;
   }
   return nullptr;
 }
@@ -220,11 +224,30 @@ void ResourceManager::AddTile(
 SDL_Texture *ResourceManager::QueryTexture(std::string_view name) {
   if (tiles_.find(name.data()) != tiles_.end())
     return tiles_.at(name.data()).get();
+  auto split_pos = name.find(::EngineCore::Utils::IMAGE_SPLIT);
+  auto tileset_name = name.substr(0, split_pos);
+  auto row_and_col_data = std::stoi(std::string(name.substr(
+      split_pos + std::string(::EngineCore::Utils::IMAGE_SPLIT).size())));
+  auto row_and_col = ::EngineCore::Utils::GetRowAndCol(row_and_col_data);
+  if (auto active_layer =
+          ResourceManager::GetInstance().LoadImage(std::string(tileset_name))) {
+    SDL_Texture *cropped_texture = nullptr;
+    if (auto tileset = ActiveTileset(tileset_name)) {
+      SDL_Rect src_rect = {row_and_col.second * tileset->GetTileWidth(),
+                           row_and_col.first * tileset->GetTileHeight(),
+                           tileset->GetTileWidth(), tileset->GetTileHeight()};
+      auto cropped =
+          ::EngineCore::Utils::CropTexture(renderer_, active_layer, src_rect);
+      cropped_texture = cropped.get();
+      ResourceManager::GetInstance().AddTile(name, std::move(cropped));
+    }
+    return cropped_texture;
+  }
   return nullptr;
 }
 
 void ResourceManager::ClearTiles() {
-  //  for (const auto &tile : tiles_) SDL_DestroyTexture(tile.second.get());
+  ;
   tiles_.clear();
 }
 
@@ -244,6 +267,10 @@ ResourceManager::~ResourceManager() {
   Mix_CloseAudio();
   Mix_Quit();
   IMG_Quit();
+}
+GameObject *ResourceManager::GetActiveCamera() const { return active_camera_; }
+void ResourceManager::SetActiveCamera(GameObject *active_camera) {
+  active_camera_ = active_camera;
 }
 
 }  // namespace CSPill::EngineCore

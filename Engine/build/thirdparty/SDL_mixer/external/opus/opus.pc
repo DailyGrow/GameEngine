@@ -1,0 +1,16 @@
+# Opus codec reference implementation pkg-config file
+
+prefix=C:/Program Files (x86)/CSPillEngine
+exec_prefix=C:/Program Files (x86)/CSPillEngine
+libdir=C:/Program Files (x86)/CSPillEngine/lib
+includedir=C:/Program Files (x86)/CSPillEngine/include
+
+Name: Opus
+Description: Opus IETF audio codec ( build)
+URL: https://opus-codec.org/
+Version: 0.8.0
+Requires:
+Conflicts:
+Libs: -LC:/Program Files (x86)/CSPillEngine/lib -lopus
+Libs.private: -lm
+Cflags: -IC:/Program Files (x86)/CSPillEngine/include/opus

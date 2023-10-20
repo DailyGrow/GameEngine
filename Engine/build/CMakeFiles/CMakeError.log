@@ -1,0 +1,1121 @@
+Determining if the __GLIBC__ exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-oepys3
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_94451 && [1/2] Building C object CMakeFiles/cmTC_94451.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_94451.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe    -o CMakeFiles/cmTC_94451.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-oepys3/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-oepys3/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-oepys3/CheckSymbolExists.c:8:19: error: '__GLIBC__' undeclared (first use in this function); did you mean '__LINE__'?
+    8 |   return ((int*)(&__GLIBC__))[argc];
+      |                   ^~~~~~~~~
+      |                   __LINE__
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-oepys3/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __GLIBC__
+  return ((int*)(&__GLIBC__))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_GCC_PREFERRED_STACK_BOUNDARY failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bk6s2a
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_16248 && [1/2] Building C object CMakeFiles/cmTC_16248.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_16248.dir/src.c.obj 
+F:\msys2\mingw64\bin\cc.exe -DHAVE_GCC_PREFERRED_STACK_BOUNDARY  -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos" -mpreferred-stack-boundary=2 -o CMakeFiles/cmTC_16248.dir/src.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bk6s2a/src.c"
+cc1.exe: error: '-mpreferred-stack-boundary=2' is not between 3 and 4
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int x = 0; int main(int argc, char **argv) { return 0; }
+
+Performing C SOURCE FILE Test HAVE_ALTIVEC_H_HDR failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-h0ot55
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_f52df && [1/2] Building C object CMakeFiles/cmTC_f52df.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_f52df.dir/src.c.obj 
+F:\msys2\mingw64\bin\cc.exe -DHAVE_ALTIVEC_H_HDR  -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos" -maltivec -o CMakeFiles/cmTC_f52df.dir/src.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-h0ot55/src.c"
+cc.exe: error: unrecognized command-line option '-maltivec'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+          #include <altivec.h>
+          vector unsigned int vzero() {
+              return vec_splat_u32(0);
+          }
+          int main(int argc, char **argv) { return 0; }
+
+Performing C SOURCE FILE Test HAVE_ALTIVEC failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-43a4l5
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_6a89d && [1/2] Building C object CMakeFiles/cmTC_6a89d.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_6a89d.dir/src.c.obj 
+F:\msys2\mingw64\bin\cc.exe -DHAVE_ALTIVEC  -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos" -maltivec -o CMakeFiles/cmTC_6a89d.dir/src.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-43a4l5/src.c"
+cc.exe: error: unrecognized command-line option '-maltivec'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+          vector unsigned int vzero() {
+              return vec_splat_u32(0);
+          }
+          int main(int argc, char **argv) { return 0; }
+
+Determining if the include file libunwind.h exists failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-5qa186
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_06e13 && [1/2] Building C object CMakeFiles/cmTC_06e13.dir/CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_06e13.dir/CheckIncludeFile.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_06e13.dir/CheckIncludeFile.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-5qa186/CheckIncludeFile.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-5qa186/CheckIncludeFile.c:1:10: fatal error: libunwind.h: No such file or directory
+    1 | #include <libunwind.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the include file linux/input.h exists failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bcifk0
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_f9973 && [1/2] Building C object CMakeFiles/cmTC_f9973.dir/CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_f9973.dir/CheckIncludeFile.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_f9973.dir/CheckIncludeFile.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bcifk0/CheckIncludeFile.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bcifk0/CheckIncludeFile.c:1:10: fatal error: linux/input.h: No such file or directory
+    1 | #include <linux/input.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+
+Performing C SOURCE FILE Test HAVE_MPROTECT failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wakqyz
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_a8283 && [1/2] Building C object CMakeFiles/cmTC_a8283.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_a8283.dir/src.c.obj 
+F:\msys2\mingw64\bin\cc.exe -DHAVE_MPROTECT  -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_a8283.dir/src.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wakqyz/src.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wakqyz/src.c:2:39: fatal error: sys/mman.h: No such file or directory
+    2 |                              #include <sys/mman.h>
+      |                                       ^~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <sys/types.h>
+                             #include <sys/mman.h>
+                             int main(void) { return 0; }
+
+Determining if the setenv exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-frgezk
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_e1802 && [1/2] Building C object CMakeFiles/cmTC_e1802.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_e1802.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_e1802.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-frgezk/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-frgezk/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-frgezk/CheckSymbolExists.c:14:19: error: 'setenv' undeclared (first use in this function); did you mean 'getenv'?
+   14 |   return ((int*)(&setenv))[argc];
+      |                   ^~~~~~
+      |                   getenv
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-frgezk/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef setenv
+  return ((int*)(&setenv))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the unsetenv exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wuwtin
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_926aa && [1/2] Building C object CMakeFiles/cmTC_926aa.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_926aa.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_926aa.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wuwtin/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wuwtin/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wuwtin/CheckSymbolExists.c:14:19: error: 'unsetenv' undeclared (first use in this function)
+   14 |   return ((int*)(&unsetenv))[argc];
+      |                   ^~~~~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wuwtin/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef unsetenv
+  return ((int*)(&unsetenv))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the bcopy exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-glxh3x
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_2e289 && [1/2] Building C object CMakeFiles/cmTC_2e289.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_2e289.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_2e289.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-glxh3x/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-glxh3x/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-glxh3x/CheckSymbolExists.c:14:19: error: 'bcopy' undeclared (first use in this function)
+   14 |   return ((int*)(&bcopy))[argc];
+      |                   ^~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-glxh3x/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef bcopy
+  return ((int*)(&bcopy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strlcpy exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-dt356l
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_0a06f && [1/2] Building C object CMakeFiles/cmTC_0a06f.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_0a06f.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_0a06f.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-dt356l/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-dt356l/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-dt356l/CheckSymbolExists.c:14:19: error: 'strlcpy' undeclared (first use in this function); did you mean 'strncpy'?
+   14 |   return ((int*)(&strlcpy))[argc];
+      |                   ^~~~~~~
+      |                   strncpy
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-dt356l/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcpy
+  return ((int*)(&strlcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strlcat exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-i3qn09
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_8098e && [1/2] Building C object CMakeFiles/cmTC_8098e.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_8098e.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_8098e.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-i3qn09/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-i3qn09/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-i3qn09/CheckSymbolExists.c:14:19: error: 'strlcat' undeclared (first use in this function); did you mean 'strncat'?
+   14 |   return ((int*)(&strlcat))[argc];
+      |                   ^~~~~~~
+      |                   strncat
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-i3qn09/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcat
+  return ((int*)(&strlcat))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the index exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-tfv4aa
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_635d3 && [1/2] Building C object CMakeFiles/cmTC_635d3.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_635d3.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_635d3.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-tfv4aa/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-tfv4aa/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-tfv4aa/CheckSymbolExists.c:14:19: error: 'index' undeclared (first use in this function)
+   14 |   return ((int*)(&index))[argc];
+      |                   ^~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-tfv4aa/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef index
+  return ((int*)(&index))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the rindex exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-d04en6
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_af03e && [1/2] Building C object CMakeFiles/cmTC_af03e.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_af03e.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_af03e.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-d04en6/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-d04en6/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-d04en6/CheckSymbolExists.c:14:19: error: 'rindex' undeclared (first use in this function)
+   14 |   return ((int*)(&rindex))[argc];
+      |                   ^~~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-d04en6/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef rindex
+  return ((int*)(&rindex))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the _uitoa exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nwp9z1
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_c5659 && [1/2] Building C object CMakeFiles/cmTC_c5659.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_c5659.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_c5659.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nwp9z1/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nwp9z1/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nwp9z1/CheckSymbolExists.c:14:19: error: '_uitoa' undeclared (first use in this function); did you mean '_ultoa'?
+   14 |   return ((int*)(&_uitoa))[argc];
+      |                   ^~~~~~
+      |                   _ultoa
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nwp9z1/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _uitoa
+  return ((int*)(&_uitoa))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strcasestr exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-n2r5s8
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_cd9da && [1/2] Building C object CMakeFiles/cmTC_cd9da.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_cd9da.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_cd9da.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-n2r5s8/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-n2r5s8/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-n2r5s8/CheckSymbolExists.c:14:19: error: 'strcasestr' undeclared (first use in this function); did you mean 'strcasecmp'?
+   14 |   return ((int*)(&strcasestr))[argc];
+      |                   ^~~~~~~~~~
+      |                   strcasecmp
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-n2r5s8/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcasestr
+  return ((int*)(&strcasestr))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the wcslcat exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ukli8x
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_7e97e && [1/2] Building C object CMakeFiles/cmTC_7e97e.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_7e97e.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_7e97e.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ukli8x/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ukli8x/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ukli8x/CheckSymbolExists.c:14:19: error: 'wcslcat' undeclared (first use in this function); did you mean 'wcsncat'?
+   14 |   return ((int*)(&wcslcat))[argc];
+      |                   ^~~~~~~
+      |                   wcsncat
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ukli8x/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcslcat
+  return ((int*)(&wcslcat))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the wcslcpy exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-2zree4
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_a4c6b && [1/2] Building C object CMakeFiles/cmTC_a4c6b.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_a4c6b.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_a4c6b.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-2zree4/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-2zree4/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-2zree4/CheckSymbolExists.c:14:19: error: 'wcslcpy' undeclared (first use in this function); did you mean 'wcsncpy'?
+   14 |   return ((int*)(&wcslcpy))[argc];
+      |                   ^~~~~~~
+      |                   wcsncpy
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-2zree4/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcslcpy
+  return ((int*)(&wcslcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the wcscasecmp exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-e542ay
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_d4bbd && [1/2] Building C object CMakeFiles/cmTC_d4bbd.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_d4bbd.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_d4bbd.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-e542ay/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-e542ay/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-e542ay/CheckSymbolExists.c:14:19: error: 'wcscasecmp' undeclared (first use in this function); did you mean 'strcasecmp'?
+   14 |   return ((int*)(&wcscasecmp))[argc];
+      |                   ^~~~~~~~~~
+      |                   strcasecmp
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-e542ay/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcscasecmp
+  return ((int*)(&wcscasecmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the wcsncasecmp exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-u3jozi
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_ddde4 && [1/2] Building C object CMakeFiles/cmTC_ddde4.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_ddde4.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_ddde4.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-u3jozi/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-u3jozi/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-u3jozi/CheckSymbolExists.c:14:19: error: 'wcsncasecmp' undeclared (first use in this function); did you mean 'strncasecmp'?
+   14 |   return ((int*)(&wcsncasecmp))[argc];
+      |                   ^~~~~~~~~~~
+      |                   strncasecmp
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-u3jozi/CheckSymbolExists.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <stddef.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <float.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcsncasecmp
+  return ((int*)(&wcsncasecmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the sigaction exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-c4921k
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_2952f && [1/2] Building C object CMakeFiles/cmTC_2952f.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_2952f.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_2952f.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-c4921k/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-c4921k/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-c4921k/CheckSymbolExists.c:8:19: error: 'sigaction' undeclared (first use in this function)
+    8 |   return ((int*)(&sigaction))[argc];
+      |                   ^~~~~~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-c4921k/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <signal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sigaction
+  return ((int*)(&sigaction))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the sysconf exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bj8jni
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_db394 && [1/2] Building C object CMakeFiles/cmTC_db394.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_db394.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_db394.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bj8jni/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bj8jni/CheckSymbolExists.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bj8jni/CheckSymbolExists.c:8:19: error: 'sysconf' undeclared (first use in this function)
+    8 |   return ((int*)(&sysconf))[argc];
+      |                   ^~~~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-bj8jni/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sysconf
+  return ((int*)(&sysconf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the sysctlbyname exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-7ck0d1
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_4d7b4 && [1/2] Building C object CMakeFiles/cmTC_4d7b4.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_4d7b4.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_4d7b4.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-7ck0d1/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-7ck0d1/CheckSymbolExists.c:3:10: fatal error: sys/sysctl.h: No such file or directory
+    3 | #include <sys/sysctl.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <sys/types.h>
+#include <sys/sysctl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sysctlbyname
+  return ((int*)(&sysctlbyname))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the getauxval exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-4g61b9
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_89d29 && [1/2] Building C object CMakeFiles/cmTC_89d29.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_89d29.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_89d29.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-4g61b9/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-4g61b9/CheckSymbolExists.c:2:10: fatal error: sys/auxv.h: No such file or directory
+    2 | #include <sys/auxv.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <sys/auxv.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getauxval
+  return ((int*)(&getauxval))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the elf_aux_info exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-84uhsj
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_c694d && [1/2] Building C object CMakeFiles/cmTC_c694d.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_c694d.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_c694d.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-84uhsj/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-84uhsj/CheckSymbolExists.c:2:10: fatal error: sys/auxv.h: No such file or directory
+    2 | #include <sys/auxv.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <sys/auxv.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef elf_aux_info
+  return ((int*)(&elf_aux_info))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the poll exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nu22nc
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_433b0 && [1/2] Building C object CMakeFiles/cmTC_433b0.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_433b0.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_433b0.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nu22nc/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-nu22nc/CheckSymbolExists.c:2:10: fatal error: poll.h: No such file or directory
+    2 | #include <poll.h>
+      |          ^~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <poll.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef poll
+  return ((int*)(&poll))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function iconv_open exists in the iconv failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-sz61sg
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_123bb && [1/2] Building C object CMakeFiles/cmTC_123bb.dir/CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_123bb.exe
+FAILED: cmTC_123bb.exe 
+cmd.exe /C "cd . && F:\msys2\mingw64\bin\cc.exe -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos" -DCHECK_FUNCTION_EXISTS=iconv_open  -D_GNU_SOURCE=1  CMakeFiles/cmTC_123bb.dir/CheckFunctionExists.c.obj -o cmTC_123bb.exe -Wl,--out-implib,libcmTC_123bb.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -liconv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+F:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/cmTC_123bb.dir/CheckFunctionExists.c.obj:CheckFunctionExists.c:(.text+0x15): undefined reference to `iconv_open'
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function iconv_open exists in the c failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-i8xj3p
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_13495 && [1/2] Building C object CMakeFiles/cmTC_13495.dir/CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_13495.exe
+FAILED: cmTC_13495.exe 
+cmd.exe /C "cd . && F:\msys2\mingw64\bin\cc.exe -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos" -DCHECK_FUNCTION_EXISTS=iconv_open  -D_GNU_SOURCE=1  CMakeFiles/cmTC_13495.dir/CheckFunctionExists.c.obj -o cmTC_13495.exe -Wl,--out-implib,libcmTC_13495.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lc  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+F:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lc: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the include file alloca.h exists failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-kwlmcg
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_f85b4 && [1/2] Building C object CMakeFiles/cmTC_f85b4.dir/CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_f85b4.dir/CheckIncludeFile.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_f85b4.dir/CheckIncludeFile.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-kwlmcg/CheckIncludeFile.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-kwlmcg/CheckIncludeFile.c:1:10: fatal error: alloca.h: No such file or directory
+    1 | #include <alloca.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the alloca exist failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-uyxypf
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_44c3e && [1/2] Building C object CMakeFiles/cmTC_44c3e.dir/CheckSymbolExists.c.obj
+FAILED: CMakeFiles/cmTC_44c3e.dir/CheckSymbolExists.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_44c3e.dir/CheckSymbolExists.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-uyxypf/CheckSymbolExists.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-uyxypf/CheckSymbolExists.c:2:10: fatal error: alloca.h: No such file or directory
+    2 | #include <alloca.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+File CheckSymbolExists.c:
+/* */
+#include <alloca.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef alloca
+  return ((int*)(&alloca))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_SA_SIGACTION failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-gsrfko
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_389de && [1/2] Building C object CMakeFiles/cmTC_389de.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_389de.dir/src.c.obj 
+F:\msys2\mingw64\bin\cc.exe -DHAVE_SA_SIGACTION  -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_389de.dir/src.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-gsrfko/src.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-gsrfko/src.c: In function 'main':
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-gsrfko/src.c:6:39: error: invalid use of undefined type 'struct sigaction'
+    6 |   (void)sizeof(((struct sigaction *)0)->sa_sigaction);
+      |                                       ^~
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+#include <signal.h>
+
+int main()
+{
+  (void)sizeof(((struct sigaction *)0)->sa_sigaction);
+  return 0;
+}
+
+
+Performing C SOURCE FILE Test HAVE_XINPUT_GAMEPAD_EX failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-gsgewc
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_b4ee4 && [1/2] Building C object CMakeFiles/cmTC_b4ee4.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_b4ee4.dir/src.c.obj 
+F:\msys2\mingw64\bin\cc.exe -DHAVE_XINPUT_GAMEPAD_EX  -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_b4ee4.dir/src.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-gsgewc/src.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-gsgewc/src.c:4:7: error: unknown type name 'XINPUT_GAMEPAD_EX'; did you mean 'XINPUT_GAMEPAD_X'?
+    4 |       XINPUT_GAMEPAD_EX x1;
+      |       ^~~~~~~~~~~~~~~~~
+      |       XINPUT_GAMEPAD_X
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+      #include <windows.h>
+      #include <xinput.h>
+      XINPUT_GAMEPAD_EX x1;
+      int main(int argc, char **argv) { return 0; }
+
+Performing C SOURCE FILE Test HAVE_XINPUT_STATE_EX failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ro67cg
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_e57e7 && [1/2] Building C object CMakeFiles/cmTC_e57e7.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_e57e7.dir/src.c.obj 
+F:\msys2\mingw64\bin\cc.exe -DHAVE_XINPUT_STATE_EX  -idirafter "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL/src/video/khronos"  -D_GNU_SOURCE=1 -o CMakeFiles/cmTC_e57e7.dir/src.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ro67cg/src.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-ro67cg/src.c:4:7: error: unknown type name 'XINPUT_STATE_EX'; did you mean 'XINPUT_STATE'?
+    4 |       XINPUT_STATE_EX s1;
+      |       ^~~~~~~~~~~~~~~
+      |       XINPUT_STATE
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+      #include <windows.h>
+      #include <xinput.h>
+      XINPUT_STATE_EX s1;
+      int main(int argc, char **argv) { return 0; }
+
+Determining size of u_int16_t failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-8lzyi5
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_8f8b5 && [1/2] Building C object CMakeFiles/cmTC_8f8b5.dir/U_INT16_SIZE.c.obj
+FAILED: CMakeFiles/cmTC_8f8b5.dir/U_INT16_SIZE.c.obj 
+F:\msys2\mingw64\bin\cc.exe    -o CMakeFiles/cmTC_8f8b5.dir/U_INT16_SIZE.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-8lzyi5/U_INT16_SIZE.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-8lzyi5/U_INT16_SIZE.c:27:22: error: 'u_int16_t' undeclared here (not in a function); did you mean 'uint16_t'?
+   27 | #define SIZE (sizeof(u_int16_t))
+      |                      ^~~~~~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-8lzyi5/U_INT16_SIZE.c:29:12: note: in expansion of macro 'SIZE'
+   29 |   ('0' + ((SIZE / 10000)%10)),
+      |            ^~~~
+ninja: build stopped: subcommand failed.
+
+
+U_INT16_SIZE.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__PPC64__)
+# define KEY '_','_','P','P','C','6','4','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__PPC__)
+# define KEY '_','_','P','P','C','_','_'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(u_int16_t))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining size of u_int32_t failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-x7zkpy
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_881fb && [1/2] Building C object CMakeFiles/cmTC_881fb.dir/U_INT32_SIZE.c.obj
+FAILED: CMakeFiles/cmTC_881fb.dir/U_INT32_SIZE.c.obj 
+F:\msys2\mingw64\bin\cc.exe    -o CMakeFiles/cmTC_881fb.dir/U_INT32_SIZE.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-x7zkpy/U_INT32_SIZE.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-x7zkpy/U_INT32_SIZE.c:27:22: error: 'u_int32_t' undeclared here (not in a function); did you mean 'uint32_t'?
+   27 | #define SIZE (sizeof(u_int32_t))
+      |                      ^~~~~~~~~
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-x7zkpy/U_INT32_SIZE.c:29:12: note: in expansion of macro 'SIZE'
+   29 |   ('0' + ((SIZE / 10000)%10)),
+      |            ^~~~
+ninja: build stopped: subcommand failed.
+
+
+U_INT32_SIZE.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__PPC64__)
+# define KEY '_','_','P','P','C','6','4','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__PPC__)
+# define KEY '_','_','P','P','C','_','_'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(u_int32_t))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the include file byteswap.h exists failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-iv71eb
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_9be53 && [1/2] Building C object CMakeFiles/cmTC_9be53.dir/CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_9be53.dir/CheckIncludeFile.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Waggregate-return -Wcast-align -Wnested-externs -Wshadow -Wundef -Wmissing-declarations -Winline -o CMakeFiles/cmTC_9be53.dir/CheckIncludeFile.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-iv71eb/CheckIncludeFile.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-iv71eb/CheckIncludeFile.c:1:10: fatal error: byteswap.h: No such file or directory
+    1 | #include <byteswap.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+
+Looking for a ASM_NASM compiler failed with the following output:
+-- The ASM_NASM compiler identification is unknown
+-- Didn't find assembler
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_ASM_NASM_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "ASM_NASM" or the CMake cache entry CMAKE_ASM_NASM_COMPILER to the
+  full path to the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+See also "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/thirdparty/SDL_mixer/external/flac/src/libFLAC/CMakeFiles/CheckASM_NASM/CMakeFiles/CMakeOutput.log".
+See also "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/thirdparty/SDL_mixer/external/flac/src/libFLAC/CMakeFiles/CheckASM_NASM/CMakeFiles/CMakeError.log".
+
+Performing C SOURCE FILE Test Intl_IS_BUILT_IN failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-wba79m
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_f209d && [1/2] Building C object CMakeFiles/cmTC_f209d.dir/src.c.obj
+[2/2] Linking C executable cmTC_f209d.exe
+FAILED: cmTC_f209d.exe 
+cmd.exe /C "cd . && F:\msys2\mingw64\bin\cc.exe -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Waggregate-return -Wcast-align -Wnested-externs -Wshadow -Wundef -Wmissing-declarations -Winline  CMakeFiles/cmTC_f209d.dir/src.c.obj -o cmTC_f209d.exe -Wl,--out-implib,libcmTC_f209d.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+F:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/cmTC_f209d.dir/src.c.obj:src.c:(.text+0x18): undefined reference to `libintl_gettext'
+F:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/cmTC_f209d.dir/src.c.obj:src.c:(.text+0x31): undefined reference to `libintl_dgettext'
+F:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles/cmTC_f209d.dir/src.c.obj:src.c:(.text+0x50): undefined reference to `libintl_dcgettext'
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <libintl.h>
+int main(void) {
+  gettext("");
+  dgettext("", "");
+  dcgettext("", "", 0);
+  return 0;
+}
+
+
+Determining if the include file sys/ioctl.h exists failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-uj5udg
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_acea7 && [1/2] Building C object CMakeFiles/cmTC_acea7.dir/CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_acea7.dir/CheckIncludeFile.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Waggregate-return -Wcast-align -Wnested-externs -Wshadow -Wundef -Wmissing-declarations -Winline -o CMakeFiles/cmTC_acea7.dir/CheckIncludeFile.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-uj5udg/CheckIncludeFile.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-uj5udg/CheckIncludeFile.c:1:10: fatal error: sys/ioctl.h: No such file or directory
+    1 | #include <sys/ioctl.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the include file termios.h exists failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-xckaz0
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_0ea4c && [1/2] Building C object CMakeFiles/cmTC_0ea4c.dir/CheckIncludeFile.c.obj
+FAILED: CMakeFiles/cmTC_0ea4c.dir/CheckIncludeFile.c.obj 
+F:\msys2\mingw64\bin\cc.exe   -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Waggregate-return -Wcast-align -Wnested-externs -Wshadow -Wundef -Wmissing-declarations -Winline -o CMakeFiles/cmTC_0ea4c.dir/CheckIncludeFile.c.obj -c "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-xckaz0/CheckIncludeFile.c"
+D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-xckaz0/CheckIncludeFile.c:1:10: fatal error: termios.h: No such file or directory
+    1 | #include <termios.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function clock_gettime exists failed with the following output:
+Change Dir: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/CMakeFiles/CMakeScratch/TryCompile-xdu12h
+
+Run Build Command(s):F:/msys2/mingw64/bin/ninja.exe cmTC_a7b4a && [1/2] Building C object CMakeFiles/cmTC_a7b4a.dir/CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_a7b4a.exe
+FAILED: cmTC_a7b4a.exe 
+cmd.exe /C "cd . && F:\msys2\mingw64\bin\cc.exe -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Waggregate-return -Wcast-align -Wnested-externs -Wshadow -Wundef -Wmissing-declarations -Winline -DCHECK_FUNCTION_EXISTS=clock_gettime  CMakeFiles/cmTC_a7b4a.dir/CheckFunctionExists.c.obj -o cmTC_a7b4a.exe -Wl,--out-implib,libcmTC_a7b4a.dll.a -Wl,--major-image-version,0,--minor-image-version,0  -lrt  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 && cd ."
+F:/msys2/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lrt: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+

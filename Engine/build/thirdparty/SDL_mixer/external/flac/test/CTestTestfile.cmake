@@ -1,0 +1,14 @@
+# CMake generated Testfile for 
+# Source directory: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test
+# Build directory: D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/thirdparty/SDL_mixer/external/flac/test
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(libFLAC "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/thirdparty/SDL_mixer/external/flac/src/test_libFLAC/test_libFLAC.exe")
+set_tests_properties(libFLAC PROPERTIES  WORKING_DIRECTORY "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build" _BACKTRACE_TRIPLES "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;6;add_test;D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;0;")
+add_test(libFLAC++ "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/thirdparty/SDL_mixer/external/flac/src/test_libFLAC++/test_libFLAC++.exe")
+set_tests_properties(libFLAC++ PROPERTIES  WORKING_DIRECTORY "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build" _BACKTRACE_TRIPLES "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;9;add_test;D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;0;")
+add_test(flac_help "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/thirdparty/SDL_mixer/external/flac/src/flac/flac.exe" "--help")
+set_tests_properties(flac_help PROPERTIES  WORKING_DIRECTORY "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build" _BACKTRACE_TRIPLES "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;12;add_test;D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;0;")
+add_test(metaflac_help "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build/thirdparty/SDL_mixer/external/flac/src/metaflac/metaflac.exe" "--help")
+set_tests_properties(metaflac_help PROPERTIES  WORKING_DIRECTORY "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/build" _BACKTRACE_TRIPLES "D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;15;add_test;D:/learning/2021America/5850 game engine/final23/finalproject-sv-group/Engine/thirdparty/SDL_mixer/external/flac/test/CMakeLists.txt;0;")

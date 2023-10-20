@@ -27,18 +27,21 @@ class Component {
    */
   virtual ~Component() = default;
 
+  explicit Component(std::string_view name = "Component");
+  Component(Component &&) = default;
+
   /**
    * Update is called every frame, will notify other component through
    * GameObject. This function must be implemented in child class.
    * @param object The GameObject that current component belongs to.
    */
-  virtual void Update(GameObject* object) = 0;
+  virtual void Update(GameObject *object, float dt) = 0;
 
   /**
    * Render is called every frame.
    * @param renderer SDL_Renderer renderer.
    */
-  virtual void Render(SDL_Renderer* renderer);
+  virtual void Render(SDL_Renderer *renderer);
 
   /**
    * Name of the component.
@@ -54,7 +57,6 @@ class Component {
 
  protected:
   std::string name_;
-  explicit Component(std::string_view name = "Component");
 };
 
 }  // namespace CSPill::EngineCore
